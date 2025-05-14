@@ -1,0 +1,30 @@
++-------------+     +--------------+     +----------------+
+|   Authors   |     |  Book_Author |     |     Books      |
+|-------------|     |--------------|     |----------------|
+| author_id PK|<--->| author_id FK |     | book_id PK     |
+| first_name  |     | book_id FK   |<--->| title          |
+| last_name   |     +--------------+     | genre          |
++-------------+                         | published_year |
+                                        | isbn UNIQUE    |
+                                        +----------------+
+
++-------------+     +----------------+
+|   Members   |     |  Transactions  |
+|-------------|     |----------------|
+| member_id PK|<--->| member_id FK   |
+| first_name  |     | book_id FK     |<---> Books
+| last_name   |     | staff_id FK    |<---> Staff
+| dob         |     | borrow_date    |
+| phone       |     | return_date    |
+| email UNIQUE|     | due_date       |
++-------------+     +----------------+
+
++-------------+
+|    Staff    |
+|-------------|
+| staff_id PK |
+| first_name  |
+| last_name   |
+| email UNIQUE|
+| position    |
++-------------+
